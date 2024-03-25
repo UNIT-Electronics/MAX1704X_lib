@@ -8,7 +8,7 @@ Control del circuito [MAX1704](./Docs/max17048-max17049.pdf) utilizando Arduino 
 </div>
 
 - [Compatibilidad con Arduino IDE](./Software/Duino/CONFIG-es.md)
-- [Compatibilidad con MicroPython](./Software/MicroPython/CONFIG-sp.md)
+- [Compatibilidad con MicroPython](./Software/MicroPython/CONFIG-es.md)
 
 # Licencia
 El código en este repositorio está bajo la Licencia MIT, haciéndolo de código abierto.
