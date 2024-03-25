@@ -11,13 +11,8 @@ To set up the environment in the Arduino IDE, follow these steps:
 
 Download the basic test code for connection:
 
-<div style="text-align: center;">
-    <a href="../../Software/MAX17048_basic/MAX17048_basic.ino" download="MAX17048_basic.ino">
-        <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
-            MAX17048_basic.ino
-        </button>
-    </a>
-</div>
+- [MAX17048_basic.ino](./MAX17048_basic/MAX17048_basic.ino)
+- [MAX17048_advanced.ino](./MAX17048_advanced/MAX17048_advanced.ino)
 
 It is recommended to use the [DualMCU board]() for utilizing the JTAG connectors with the QWIIC method. The implementation code is for this board, but you can adapt the code to other compatible boards.
 <div align="center">

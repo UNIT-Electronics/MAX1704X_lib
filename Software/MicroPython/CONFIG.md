@@ -7,15 +7,11 @@ This code has been tested on the RP2040 microcontroller of the [DualMCU]() board
 
 To set up, download the library and save it onto the microcontroller. When using Thonny, ensure it is saved with the name `max1704x.py`.
 
-<div style="text-align: center;">
-    <a href="./example.zip" download="example.zip">
-        <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
-            example.zip
-        </button>
-    </a>
-</div>
+- [Library](./example/max1704x.py)
 
 The `Test.py` code outlines the primary usage and any special instructions. It's essential to execute this code on the RP2040 board.
+
+-[Test](./example/Test.py)
 
 Quick test: Copy this code and run it using Thonny:
 
