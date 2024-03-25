@@ -14,7 +14,7 @@ Download the basic test code for connection:
 - [MAX17048_basic.ino](./MAX17048_basic/MAX17048_basic.ino)
 - [MAX17048_advanced.ino](./MAX17048_advanced/MAX17048_advanced.ino)
 
-It is recommended to use the [DualMCU board]() for utilizing the JTAG connectors with the QWIIC method. The implementation code is for this board, but you can adapt the code to other compatible boards.
+It is recommended to use the [DualMCU board](https://uelectronics.com/producto/unit-dualmcu-esp32-rp2040-tarjeta-de-desarrollo/) for utilizing the JTAG connectors with the QWIIC method. The implementation code is for this board, but you can adapt the code to other compatible boards.
 <div align="center">
 
 <img src="../..//images/board1.jpg" alt="Connections" width="60%">

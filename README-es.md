@@ -19,3 +19,9 @@ El código en este repositorio está bajo la Licencia MIT, haciéndolo de códig
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Thonny](https://thonny.org/)
 - [Adafruit_MAX1704X](https://github.com/adafruit/Adafruit_MAX1704X/tree/main)
+
+
+
+
+---
+⌨️ con ❤️ por [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊

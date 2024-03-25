@@ -1,6 +1,6 @@
 # Usando MicroPython
 
-Este código ha sido probado en el microcontrolador RP2040 de la placa [DualMCU]().
+Este código ha sido probado en el microcontrolador RP2040 de la placa [DualMCU](https://uelectronics.com/producto/unit-dualmcu-esp32-rp2040-tarjeta-de-desarrollo/).
 
 ## Método de Uso
 
