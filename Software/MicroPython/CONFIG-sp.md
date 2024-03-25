@@ -11,7 +11,7 @@ Para configurar, descarga la biblioteca y guárdala en el microcontrolador. Cuan
 
 El código `Test.py` describe el uso principal y cualquier instrucción especial. Es esencial ejecutar este código en la placa RP2040.
 
--[Test](./example/Test.py)
+- [Test](./example/Test.py)
 
 
 Prueba rápida: Copia este código y ejecútalo usando Thonny:
