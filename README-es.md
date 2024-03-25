@@ -7,7 +7,7 @@ Control del circuito [MAX1704](./Docs/max17048-max17049.pdf) utilizando Arduino 
 ![Versión 1.0](https://img.shields.io/badge/version-1.0-green)
 </div>
 
-- [Compatibilidad con Arduino IDE](./Software/Arduino/)
+- [Compatibilidad con Arduino IDE](./Software/Duino/)
 - [Compatibilidad con MicroPython](./Software/MicroPython/)
 
 # Licencia
