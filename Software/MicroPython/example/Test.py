@@ -3,13 +3,15 @@ from max1704x import max1704x
 # Inicializar max17043/max17048 con los pines 
 
 #ESP32
+# _id=-1
 # SDA=21
 # SCK=22
 
 #RP2040
+_id=0
 SDA=12
 SCK=13
-mi_sensor = max1704x(sda_pin=SDA, scl_pin=SCK)
+mi_sensor = max1704x(_id,sda_pin=SDA, scl_pin=SCK)
 
 # Obtener la dirección I2C del sensor
 print("Dirección I2C del sensor:", mi_sensor.address())

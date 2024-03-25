@@ -18,14 +18,16 @@ class max1704x:
     REGISTER_CONFIG = const(0X0C)
     REGISTER_COMMAND = const(0XFE)
 
-    def __init__(self, sda_pin=12, scl_pin=13):
+    def __init__(self, _id=0, sda_pin=12, scl_pin=13):
         """
         Inicializa el módulo y establece los pines usados para I2C.
         Escanea la dirección I2C (devuelve el primer resultado encontrado).
         """
+        self._id = _id
+   
         self.sda_pin = sda_pin
         self.scl_pin = scl_pin
-        self.i2c = I2C( sda=Pin(self.sda_pin), scl=Pin(self.scl_pin))
+        self.i2c = I2C(self._id, sda=Pin(self.sda_pin), scl=Pin(self.scl_pin))
         self.max1704xAddress = self.i2c.scan()[0]
 
     def __str__(self):
