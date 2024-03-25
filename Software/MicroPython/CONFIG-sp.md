@@ -31,3 +31,5 @@ mi_sensor.quickStart()
 
 Esta versión es adaptable a otras placas, con un enfoque en la implementación cercana.
 
+---
+⌨️ con ❤️ por [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊

@@ -30,3 +30,5 @@ mi_sensor.quickStart()
 
 This version is adaptable to other boards, with a focus on close implementation.
 
+---
+⌨️ with ❤️ from [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊

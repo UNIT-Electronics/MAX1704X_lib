@@ -28,3 +28,6 @@ Vea los datos a través del monitor serie.
 ![Monitor Serie](../../images/serial_monitor.png)
 
 </div>
+
+---
+⌨️ con ❤️ por [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊

@@ -27,3 +27,6 @@ View the data through the serial monitor.
 ![Serial Monitor](../../images/serial_monitor.png)
 
 </div>
+
+---
+⌨️ with ❤️ from [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊
