@@ -1,4 +1,3 @@
-
 ## Using Arduino 
 
 To set up the environment in the Arduino IDE, follow these steps:
