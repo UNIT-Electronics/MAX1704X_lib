@@ -7,8 +7,8 @@ Control of the [MAX1704](./Docs/max17048-max17049.pdf) circuit using Arduino IDE
 ![Version 1.0](https://img.shields.io/badge/version-1.0-green)
 </div>
 
-- [Compatibility Arduino](./Software/Duino/CONFIG_DUINO.md)
-- [Compatibility Micropython](./Software/MicroPython/CONFIG_Upython.md)
+- [Compatibility Arduino](./Software/Duino/)
+- [Compatibility Micropython](./Software/MicroPython/)
 
 
 # Credits and References
