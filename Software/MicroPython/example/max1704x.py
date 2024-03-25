@@ -25,7 +25,7 @@ class max1704x:
         """
         self.sda_pin = sda_pin
         self.scl_pin = scl_pin
-        self.i2c = I2C(0, sda=Pin(self.sda_pin), scl=Pin(self.scl_pin))
+        self.i2c = I2C( sda=Pin(self.sda_pin), scl=Pin(self.scl_pin))
         self.max1704xAddress = self.i2c.scan()[0]
 
     def __str__(self):
@@ -142,3 +142,4 @@ class max1704x:
         Apaga el periférico.
         """
         self.i2c.deinit()
+

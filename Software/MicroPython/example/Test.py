@@ -1,7 +1,15 @@
 from max1704x import max1704x
 
-# Inicializar el objeto max17043  y max17048 con los pines 12 y 13
-mi_sensor = max1704x(sda_pin=12, scl_pin=13)
+# Inicializar max17043/max17048 con los pines 
+
+#ESP32
+# SDA=21
+# SCK=22
+
+#RP2040
+SDA=12
+SCK=13
+mi_sensor = max1704x(sda_pin=SDA, scl_pin=SCK)
 
 # Obtener la dirección I2C del sensor
 print("Dirección I2C del sensor:", mi_sensor.address())
@@ -26,4 +34,5 @@ print("¿Está en alerta?:", "Sí" if mi_sensor.inAlert() else "No")
 
 # Realizar un reinicio rápido del sensor
 mi_sensor.quickStart()
+
 
