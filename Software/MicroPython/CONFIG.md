@@ -11,7 +11,7 @@ To set up, download the library and save it onto the microcontroller. When using
 
 The `Test.py` code outlines the primary usage and any special instructions. It's essential to execute this code on the RP2040 board.
 
--[Test](./example/Test.py)
+- [Test](./example/Test.py)
 
 Quick test: Copy this code and run it using Thonny:
 
