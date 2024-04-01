@@ -21,7 +21,5 @@ El código en este repositorio está bajo la Licencia MIT, haciéndolo de códig
 - [Adafruit_MAX1704X](https://github.com/adafruit/Adafruit_MAX1704X/tree/main)
 
 
-
-
 ---
 ⌨️ con ❤️ por [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊
