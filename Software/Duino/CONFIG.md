@@ -2,12 +2,20 @@
 
 To set up the environment in the Arduino IDE, follow these steps:
 1. Go to "Library Manager".
-   
+
+<div align= "center">
+
 <img src="../../images/library.png" alt="Library Manager" width="50%">
+
+</div>
 
 2. Install the available version of **Adafruit MAX1704X**.
 
+<div align="center">
+
 <img src="../../images/install.png" alt="Install" width="20%">
+
+</div>
 
 Download the basic test code for connection:
 
