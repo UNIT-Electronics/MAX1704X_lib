@@ -15,8 +15,11 @@ The `Test.py` code outlines the primary usage and any special instructions. It's
 
 Quick test: Copy this code and run it using Thonny:
 
+<div aling = "center">
+
 <img src="../../images/qwiic.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
 
+</div>
 
 ```python
 from max1704x import max1704x

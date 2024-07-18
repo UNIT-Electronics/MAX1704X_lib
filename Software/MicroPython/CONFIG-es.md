@@ -16,8 +16,11 @@ El código `Test.py` describe el uso principal y cualquier instrucción especial
 
 Prueba rápida: Copia este código y ejecútalo usando Thonny:
 
+<div align = "center">
+
 <img src="../../images/qwiic.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
 
+</div>
 
 ```python
 from max1704x import max1704x

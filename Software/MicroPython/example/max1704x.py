@@ -1,11 +1,11 @@
 """
 Descripción: Esta libreria funciona para la lectura de carateruisticas del la tarjeta de carga, comado como referencia
 {Andre Peeters 2017/10/31}<https://github.com/andrethemac/max17043.py/tree/master>
-Autor: CesarBautista
 Fecha de creación: 25 de Marzo de 2024
 Fecha de modificación:
 Versión: 1.0
 Dependencias: binascii, machine
+modified by: @Cesar
 """
 from machine import Pin, I2C
 import binascii
