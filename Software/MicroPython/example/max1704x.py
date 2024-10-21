@@ -1,10 +1,11 @@
 """
-Descripción: Esta libreria funciona para la lectura de carateruisticas del la tarjeta de carga, comado como referencia
 {Andre Peeters 2017/10/31}<https://github.com/andrethemac/max17043.py/tree/master>
-Fecha de creación: 25 de Marzo de 2024
-Fecha de modificación:
-Versión: 1.0
-Dependencias: binascii, machine
+
+Description: This is a Micropython library for the MAX17043/17044 LiPo fuel gauge.  
+Creation date: 2017/10/31
+Modification date:
+Version: 1.0
+Dependencies: binascii, machine
 modified by: @Cesar
 """
 from machine import Pin, I2C
@@ -20,8 +21,8 @@ class max1704x:
 
     def __init__(self, _id=0, sda_pin=12, scl_pin=13):
         """
-        Inicializa el módulo y establece los pines usados para I2C.
-        Escanea la dirección I2C (devuelve el primer resultado encontrado).
+        Initializes the module and sets the pins used for I2C.
+        Scans the I2C address (returns the first result found).
         """
         self._id = _id
    
@@ -32,65 +33,65 @@ class max1704x:
 
     def __str__(self):
         """
-        Representación en forma de cadena de los valores.
+        String representation of the values.
         """
-        rs  = "La dirección I2C es {}\n".format(self.max1704xAddress)
-        rs += "Los pines I2C son SDA: {} y SCL: {}\n".format(self.sda_pin, self.scl_pin)
-        rs += "La versión es {}\n".format(self.getVersion())
-        rs += "VCell es {} V\n".format(self.getVCell())
-        rs += "Compensatevalue es {}\n".format(self.getCompensateValue())
-        rs += "El umbral de alerta es {} %\n".format(self.getAlertThreshold())
-        rs += "¿Está en alerta? {}\n".format(self.inAlert())
+        rs  = "The I2C address is {}\n".format(self.max1704xAddress)
+        rs += "The I2C pins are SDA: {} and SCL: {}\n".format(self.sda_pin, self.scl_pin)
+        rs += "The version is {}\n".format(self.getVersion())
+        rs += "VCell is {} V\n".format(self.getVCell())
+        rs += "Compensate value is {}\n".format(self.getCompensateValue())
+        rs += "The alert threshold is {} %\n".format(self.getAlertThreshold())
+        rs += "Is it in alert? {}\n".format(self.inAlert())
         return rs
 
     def address(self):
         """
-        Devuelve la dirección I2C.
+        Returns the I2C address.
         """
         return self.max1704xAddress
 
     def reset(self):
         """
-        Reinicia el sensor.
+        Resets the sensor.
         """
         self.__writeRegister(REGISTER_COMMAND, binascii.unhexlify('0054'))
 
     def getVCell(self):
         """
-        Obtiene los voltios restantes en la celda.
+        Gets the remaining volts in the cell.
         """
         buf = self.__readRegister(REGISTER_VCELL)
         return (buf[0] << 4 | buf[1] >> 4) / 1000.0
 
     def getSoc(self):
         """
-        Obtiene el estado de carga.
+        Gets the state of charge.
         """
         buf = self.__readRegister(REGISTER_SOC)
         return (buf[0] + (buf[1] / 256.0))
 
     def getVersion(self):
         """
-        Obtiene la versión del módulo max17043.
+        Gets the version of the max17043 module.
         """
         buf = self.__readRegister(REGISTER_VERSION)
         return (buf[0] << 8) | (buf[1])
 
     def getCompensateValue(self):
         """
-        Obtiene el valor de compensación.
+        Gets the compensation value.
         """
         return self.__readConfigRegister()[0]
 
     def getAlertThreshold(self):
         """
-        Obtiene el nivel de alerta.
+        Gets the alert level.
         """
         return (32 - (self.__readConfigRegister()[1] & 0x1f))
 
     def setAlertThreshold(self, threshold):
         """
-        Establece el nivel de alerta.
+        Sets the alert level.
         """
         self.threshold = 32 - threshold if threshold < 32 else 32
         buf = self.__readConfigRegister()
@@ -99,49 +100,48 @@ class max1704x:
 
     def inAlert(self):
         """
-        Comprueba si el módulo max17043 está en alerta.
+        Checks if the max17043 module is in alert.
         """
         return (self.__readConfigRegister())[1] & 0x20
 
     def clearAlert(self):
         """
-        Borra la alerta.
+        Clears the alert.
         """
         self.__readConfigRegister()
 
     def quickStart(self):
         """
-        Realiza un reinicio rápido.
+        Performs a quick reset.
         """
         self.__writeRegister(REGISTER_MODE, binascii.unhexlify('4000'))
 
     def __readRegister(self, address):
         """
-        Lee el registro en la dirección especificada, siempre devuelve un bytearray de 2 bytes.
+        Reads the register at the specified address, always returns a 2-byte bytearray.
         """
         return self.i2c.readfrom_mem(self.max1704xAddress, address, 2)
 
     def __readConfigRegister(self):
         """
-        Lee el registro de configuración, siempre devuelve un bytearray de 2 bytes.
+        Reads the configuration register, always returns a 2-byte bytearray.
         """
         return self.__readRegister(REGISTER_CONFIG)
 
     def __writeRegister(self, address, buf):
         """
-        Escribe el buf en la dirección del registro.
+        Writes the buf to the register address.
         """
         self.i2c.writeto_mem(self.max1704xAddress, address, buf)
 
     def __writeConfigRegister(self, buf):
         """
-        Escribe el buf en el registro de configuración.
+        Writes the buf to the configuration register.
         """
         self.__writeRegister(REGISTER_CONFIG, buf)
 
     def deinit(self):
         """
-        Apaga el periférico.
+        Turns off the peripheral.
         """
         self.i2c.deinit()
-
