@@ -2,7 +2,7 @@
     "name": "max1704x",
     "version": "1.0.0",
     "description": "Library for MAX1704x fuel gauge ICs",
-    "author": "Tu Nombre",
+    "author": "Unit-Electronics",
     "license": "MIT",
     "repository": {
       "type": "git",
