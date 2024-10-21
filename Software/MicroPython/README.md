@@ -36,7 +36,7 @@ This version is adaptable to other boards, with a focus on close implementation.
 
 # MAX1704X Installation Guide Using MIP Library
 
-> **Note:** Direct support for ESP32 on RP2040 is not available. The `mip` library is utilized to install the `max1704x.py` library.
+> **Note:** Direct support for mip on RP2040 is not available. The `mip` library is utilized to install the `max1704x.py` library.
 
 ## Requirements
 - ESP32 device
