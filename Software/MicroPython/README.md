@@ -33,5 +33,47 @@ mi_sensor.quickStart()
 
 This version is adaptable to other boards, with a focus on close implementation.
 
+
+# MAX1704X Installation Guide Using MIP Library
+
+> **Note:** Direct support for ESP32 on RP2040 is not available. The `mip` library is utilized to install the `max1704x.py` library.
+
+## Requirements
+- ESP32 device
+- Thonny IDE
+- Wi-Fi credentials (SSID and Password)
+
+## Installation Instructions
+
+Follow the steps below to install the `max1704x.py` library:
+
+### 1. Connect to Wi-Fi
+
+Copy and run the code below in Thonny to connect your ESP32 to a Wi-Fi network:
+
+```python
+import mip
+import network
+import time
+
+ssid = "your_ssid"
+password = "your_password"
+
+def connect_wifi(ssid, password):
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+
+    for _ in range(10):
+        if wlan.isconnected():
+            print('Connected to the Wi-Fi network')
+            return wlan.ifconfig()[0]
+        time.sleep(1)
+
+    print('Could not connect to the Wi-Fi network')
+    return None
+
+ip_address = connect_wifi(ssid, password)
+```
 ---
 ⌨️ with ❤️ from [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊

@@ -1,40 +1,38 @@
 from max1704x import max1704x
 
-# Inicializar max17043/max17048 con los pines 
+# Initialize max17043/max17048 with the pins
 
-#ESP32
+# ESP32
 # _id=-1
 # SDA=21
 # SCK=22
 
-#RP2040
+# RP2040
 _id=0
 SDA=12
 SCK=13
-mi_sensor = max1704x(_id,sda_pin=SDA, scl_pin=SCK)
+my_sensor = max1704x(_id, sda_pin=SDA, scl_pin=SCK)
 
-# Obtener la dirección I2C del sensor
-print("Dirección I2C del sensor:", mi_sensor.address())
+# Get the I2C address of the sensor
+print("I2C address of the sensor:", my_sensor.address())
 
-# Obtener la versión del módulo max1704x
-print("Versión del módulo:", mi_sensor.getVersion())
+# Get the version of the max1704x module
+print("Module version:", my_sensor.getVersion())
 
-# Obtener el voltaje restante en la celda
-print("Voltaje restante en la celda (V):", mi_sensor.getVCell())
+# Get the remaining voltage in the cell
+print("Remaining cell voltage (V):", my_sensor.getVCell())
 
-# Obtener el estado de carga
-print("Estado de carga (%):", mi_sensor.getSoc())
+# Get the state of charge
+print("State of charge (%):", my_sensor.getSoc())
 
-# Obtener el valor de compensación
-print("Valor de compensación:", mi_sensor.getCompensateValue())
+# Get the compensation value
+print("Compensation value:", my_sensor.getCompensateValue())
 
-# Obtener el umbral de alerta
-print("Umbral de alerta (%):", mi_sensor.getAlertThreshold())
+# Get the alert threshold
+print("Alert threshold (%):", my_sensor.getAlertThreshold())
 
-# Comprobar si el sensor está en alerta
-print("¿Está en alerta?:", "Sí" if mi_sensor.inAlert() else "No")
+# Check if the sensor is in alert
+print("Is in alert?:", "Yes" if my_sensor.inAlert() else "No")
 
-# Realizar un reinicio rápido del sensor
-mi_sensor.quickStart()
-
-
+# Perform a quick start reset of the sensor
+my_sensor.quickStart()
