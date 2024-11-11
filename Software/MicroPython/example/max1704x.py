@@ -8,7 +8,7 @@ Version: 1.0
 Dependencies: binascii, machine
 modified by: @Cesar
 """
-from machine import Pin, I2C
+from machine import Pin, SoftI2C
 import binascii
 
 class max1704x:
@@ -19,17 +19,22 @@ class max1704x:
     REGISTER_CONFIG = const(0X0C)
     REGISTER_COMMAND = const(0XFE)
 
-    def __init__(self, _id=0, sda_pin=12, scl_pin=13):
+
+    def __init__(self, _id=0, sda_pin=12, scl_pin=13, freq=400000):
         """
-        Initializes the module and sets the pins used for I2C.
-        Scans the I2C address (returns the first result found).
+        Initializes the I2C connection and checks for sensor presence.
         """
         self._id = _id
-   
+        self.freq = freq
         self.sda_pin = sda_pin
         self.scl_pin = scl_pin
-        self.i2c = I2C(self._id, sda=Pin(self.sda_pin), scl=Pin(self.scl_pin))
-        self.max1704xAddress = self.i2c.scan()[0]
+        self.i2c = SoftI2C(sda=Pin(self.sda_pin), scl=Pin(self.scl_pin), freq=self.freq)
+        self.max1704xAddress = 0x36  # Expected address for MAX1704X
+
+        if not self.sensor_exists():
+            raise ValueError("MAX1704X sensor not found on I2C bus.")
+
+
 
     def __str__(self):
         """
@@ -43,7 +48,19 @@ class max1704x:
         rs += "The alert threshold is {} %\n".format(self.getAlertThreshold())
         rs += "Is it in alert? {}\n".format(self.inAlert())
         return rs
-
+    
+    def sensor_exists(self):
+        """
+        Quickly checks if the sensor responds at the expected I2C address.
+        Returns True if found, False otherwise.
+        """
+        try:
+            # Attempt to read a known register to confirm the sensor is connected
+            self.i2c.readfrom_mem(self.max1704xAddress, self.REGISTER_VERSION, 1)
+            return True
+        except OSError:
+            # If there's an I2C error, assume the device is not connected
+            return False
     def address(self):
         """
         Returns the I2C address.
@@ -55,6 +72,8 @@ class max1704x:
         Resets the sensor.
         """
         self.__writeRegister(REGISTER_COMMAND, binascii.unhexlify('0054'))
+        
+
 
     def getVCell(self):
         """
@@ -145,3 +164,5 @@ class max1704x:
         Turns off the peripheral.
         """
         self.i2c.deinit()
+
+
